@@ -18,6 +18,7 @@ abstract class AbstractResult implements \ArrayAccess
     /**
      * {@inheritDoc}
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return property_exists($this, $offset) && null !== $this->$offset;
@@ -26,6 +27,7 @@ abstract class AbstractResult implements \ArrayAccess
     /**
      * {@inheritDoc}
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return $this->offsetExists($offset) ? $this->$offset : null;
@@ -34,6 +36,7 @@ abstract class AbstractResult implements \ArrayAccess
     /**
      * {@inheritDoc}
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if ($this->offsetExists($offset)) {
@@ -44,6 +47,7 @@ abstract class AbstractResult implements \ArrayAccess
     /**
      * {@inheritDoc}
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         if ($this->offsetExists($offset)) {
